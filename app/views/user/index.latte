@@ -1,0 +1,13 @@
+<table style="margin:0;pading:0">
+    <tr>
+        <th colspan="4"><form action="/user/store" method="post"><input name="title"><button type="submit">提交</button></form></th>
+    </tr>
+    <tr>
+        <th>编号</th><th>标题</th><th>状态</th><th>操作</th>
+    </tr>
+    {foreach $todos as $k => $v}
+        <tr>
+            <th>{$v->id}</th><th>{$v->title}</th><th>{$v->status?:0}</th><th><a href="/user/edit/{$v->id}">确认</a>|<a href="/user/destroy/{$v->id}">删除</a></th>
+        </tr>
+    {/foreach}
+</table>
